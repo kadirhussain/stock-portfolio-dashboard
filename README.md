@@ -63,11 +63,10 @@ Controller  →  Service  →  Repository  →  Database
 
 ### Create Transaction
 
-```http
+http
 POST /api/transactions
-```
 
-```json
+json
 {
   "ticker": "AAPL",
   "transactionType": "BUY",
@@ -76,9 +75,21 @@ POST /api/transactions
   "currency": "USD",
   "tradeDate": "2025-01-20"
 }
-```
 
----
+GET /portfolio/getReport
+json
+[
+  {
+    "ticker": "AAPL",
+    "totalShares": 30,
+    "netInvestmentUsd": 3100
+  },
+  {
+    "ticker": "BMW",
+    "totalShares": 20,
+    "netInvestmentUsd": 1728
+  }
+]
 
 ## Design Decisions
 
