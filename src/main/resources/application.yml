@@ -1,0 +1,35 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: portfolio-service
+    
+  datasource:
+    url: ${KANE_DATABASE_URL:jdbc:mysql://localhost:3306/kane}
+    username: ${KANE_DATABASE_USER:root}
+    password: ${KANE_DATABASE_PASSWORD:root}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+springdoc:
+  api-docs:
+    enabled: true
+    path: /v2/api-docs
+
+  swagger-ui:
+    path: /index.html
+    show-actuator: true
+
+logging:
+  level:
+    root: INFO
+    com.kane.portfolio: DEBUG
